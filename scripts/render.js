@@ -1,9 +1,23 @@
- 
-  let hoteles = document.querySelector("#hoteles")
+ /**
+ * Selecciona el contenedor donde se mostrarán las cards de hoteles.
+ * En el HTML existe una section con id="hoteles".
+ */
+  const hoteles = document.querySelector("#hoteles")
 
+  /**
+ * Función que renderiza/muestra las cards de hoteles en la página.
+ *
+ * Se usa "export" porque esta función será utilizada en main.js
+ * y también por el filtro cuando necesite mostrar hoteles filtrados.
+ *
+ * @param {Array} grupoDeHoteles - Array de hoteles que se van a mostrar.
+ */
  export function  mostrarHoteles(grupoDeHoteles){
+  // Limpia el contenedor antes de pintar nuevas cards.
        hoteles.innerHTML = "";
+  // Recorre el array de hoteles.
     for (let i = 0; i <grupoDeHoteles.length; i++) {
+      // Agrega una card por cada hotel.
             hoteles.innerHTML+=
             `<div class="mt-6">
         <img  class="rounded-3xl w-full h-60 object-cover" src=${grupoDeHoteles[i].photo} alt="imagen del hotel">
